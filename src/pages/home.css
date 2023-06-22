@@ -1,0 +1,42 @@
+.homeContainer {
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+.homeImg {
+    width: 50%;
+}
+
+.headerText{
+    width: 50%;
+    margin: auto 0;
+
+}
+
+.headerText h1{
+    font-size: 3rem;
+}
+
+.homeImg img {
+    width: 35rem;
+    /* object-fit: contain; */
+    margin-right: auto;
+    /* align-self: flex-end; */
+    margin: 6rem 0;
+}
+
+.headBtn {
+
+}
+
+.headBtn button {
+    padding: 5px 8px;
+    margin-right: 6px;
+    background-color: transparent;
+    border: 1px solid #04543e;
+    color: #fff;
+    font-weight: 200;
+}

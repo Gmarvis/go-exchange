@@ -1,0 +1,12 @@
+.about {
+    background-color: #ffffffa9;
+    /* height: 30vh; */
+    color: #020d14;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.about p {
+    width: 60%;
+    margin: 0 auto;
+}
