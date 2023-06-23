@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,700;0,800;0,900;1,100&display=swap');
 
 body {
-  margin: 0 5rem;
+  margin: 0 8%;
   font-family: poppins;
-  background-color: rgb(2, 13, 20);
+  background-color: #020d14;
   color: #fff;
 }

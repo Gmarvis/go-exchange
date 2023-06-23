@@ -24,6 +24,7 @@ export const Home = ()=>{
                 </div>
             </div>
             <About />
+
         </div>
     )
 }
