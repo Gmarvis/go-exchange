@@ -1,15 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,700;0,800;0,900;1,100&display=swap');
 
 body {
-background-color: rgb(230, 228, 231);
-font-family: poppins;
-}
-
-h1 {
-  color: rgb(8, 175, 180);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  margin: 0 8%;
+  font-family: poppins;
+  background-color: #020d14;
+  color: #fff;
 }
