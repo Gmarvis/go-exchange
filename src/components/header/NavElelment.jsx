@@ -1,2 +1,3 @@
 import React from "react";
-import <FaBars></FaBars>
+import { FaBars } from "react-icons/fa";
+

@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import globe from '../assets/globe.png'
 import landingpic1 from '../assets/landingpic1.png'
 import headerpic from '../assets/headerpic.png'
+import { useNavigate } from "react-router-dom";
+import { PopUp } from "../components/popups/popUp";
+
 
 import './home.css'
 import { About } from "../components/about/about";
 
 
 export const Home = ()=>{
+    const [showPopUp, setShowPopUp] = useState(false)
+    const navigate = useNavigate()
     return (
         <div>
             <div className="homeContainer">
@@ -15,9 +20,13 @@ export const Home = ()=>{
                     <h1>The future of currency exchange is here.</h1>
                     <p>Currency exchange: We offer a wide range of currency pairs, including XAF/USD, XAF/EUR, and USD/EUR. We also offer spot and forward exchange rates.</p>
                     <div className="headBtn">
-                        <button>start now</button>
+                        <button onClick={()=>setShowPopUp(true)}>start now</button>
                         <button>about us</button>
                     </div>
+                     <PopUp trigger={showPopUp} setTrigger={setShowPopUp}>
+                        login to your wallet
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perspiciatis quam sunt culpa sit quasi recusandae impedit corporis et accusantium.</p>
+                    </PopUp>
                 </div>
                 <div className="homeImg">
                     <img src={headerpic} alt="" />

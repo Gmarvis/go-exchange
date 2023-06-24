@@ -16,7 +16,8 @@
 }
 
 .headerText h1 {
-  font-size: 200%;
+  font-size: 300%;
+  font-weight: bolder;
 }
 
 .homeImg img {
@@ -62,7 +63,8 @@
   }
 
   .headerText h1 {
-    font-size: 200%;
+    font-size: 600%;
+    color: red;
   }
 
   .headerText {
