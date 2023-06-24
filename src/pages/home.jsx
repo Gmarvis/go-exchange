@@ -4,6 +4,7 @@ import landingpic1 from '../assets/landingpic1.png'
 import headerpic from '../assets/headerpic.png'
 import { useNavigate } from "react-router-dom";
 import { PopUp } from "../components/popups/popUp";
+import { Login } from "../components/forms/login";
 
 
 import './home.css'
@@ -24,8 +25,7 @@ export const Home = ()=>{
                         <button>about us</button>
                     </div>
                      <PopUp trigger={showPopUp} setTrigger={setShowPopUp}>
-                        login to your wallet
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perspiciatis quam sunt culpa sit quasi recusandae impedit corporis et accusantium.</p>
+               <Login />
                     </PopUp>
                 </div>
                 <div className="homeImg">

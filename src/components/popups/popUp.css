@@ -1,0 +1,19 @@
+.popup {
+  display: flex;
+  background-color: #fff;
+  min-width: 30rem;
+  max-width: 30rem;
+
+  height: 20rem;
+  position: absolute;
+  top: 0;
+  margin-top: 20vh;
+  margin-left: 24vw;
+}
+
+.closeBtn {
+  color: #020d14;
+  font-size: 1.5rem;
+  right: 0;
+  position: absolute;
+}
