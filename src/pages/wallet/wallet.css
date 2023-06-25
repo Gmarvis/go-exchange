@@ -61,6 +61,7 @@ select option:hover {
     margin: 4rem 0;
     padding: 10px;
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .wallet h2 {
