@@ -1,43 +1,36 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./wallet.css";
 import { BsCashCoin } from "react-icons/bs";
 import { GiTwoCoins } from "react-icons/gi";
+import { CurrencyContext } from "../../utils/context";
 
 export const Wallet = () => {
-  const selectCurency = [
-    {
-      label: "USD",
-      name: "USD",
-    },
-    {
-      label: "EUR",
-      name: "EUR",
-    },
-    {
-      label: "XAF",
-      name: "XAF",
-    },
-  ];
+  const { baseCurrency } = useContext(CurrencyContext);
+  console.log("this is the base currency", baseCurrency);
+  const [selected, setSelected] = useState("")
+
+  const handleSelect =(e)=>{
+    setSelected(e.target.value)
+    // alert(selected)
+  }
 
   return (
     <div className="wallet">
       <div className="walletContainer">
         <div className="header">
           <button className="depositeBtn">Deposit</button>
-          <h2 className="balance">BALANCE: $</h2>
+          <h2 className="balance">BALANCE: <span>1000 {selected}</span> </h2>
 
           <div className="selectCurrency">
-            <label htmlFor="currency">select currency
-            <select 
-            name="selectedCurrency"
-            defaultValue={'USD'}
-            >
-              {selectCurency.map((currency) => (
-                <option className="optionIterms" value={selectCurency.name}>
-                  {currency.name}
-                </option>
-              ))}
-            </select>
+            <label htmlFor="currency">
+              select currency
+              <select name="selectedCurrency" value={selected} onChange={handleSelect}>
+                {baseCurrency.map((currency) => (
+                  <option className="optionIterms" value={baseCurrency.code}>
+                    {currency.code}
+                  </option>
+                ))}
+              </select>
             </label>
           </div>
         </div>
