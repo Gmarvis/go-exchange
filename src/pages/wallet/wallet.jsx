@@ -3,8 +3,6 @@ import "./wallet.css";
 import { BsCashCoin } from "react-icons/bs";
 import { GiTwoCoins } from "react-icons/gi";
 
-
-
 export const Wallet = () => {
   const selectCurency = [
     {
@@ -29,33 +27,37 @@ export const Wallet = () => {
           <h2 className="balance">BALANCE: $</h2>
 
           <div className="selectCurrency">
-            <label htmlFor="currency">select currency</label>
-            <select>
+            <label htmlFor="currency">select currency
+            <select 
+            name="selectedCurrency"
+            defaultValue={'USD'}
+            >
               {selectCurency.map((currency) => (
                 <option className="optionIterms" value={selectCurency.name}>
                   {currency.name}
                 </option>
               ))}
             </select>
+            </label>
           </div>
         </div>
       </div>
 
-
       <div className="exchangeSection">
         <h2>My wallet</h2>
 
-<div className="walletCards">
-  <div className="coin">
-    <GiTwoCoins />
-  </div>
-  <div className="funds">
-    <h3>USD</h3>
-    <p>$<span>10000</span></p>
-    <button>convert</button>
-  </div>
-</div>
-
+        <div className="walletCards">
+          <div className="coin">
+            <GiTwoCoins />
+          </div>
+          <div className="funds">
+            <h3>USD</h3>
+            <p>
+              $<span>10000</span>
+            </p>
+            <button>convert</button>
+          </div>
+        </div>
       </div>
     </div>
   );
