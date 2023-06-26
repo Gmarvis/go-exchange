@@ -56,6 +56,8 @@ select option:hover {
   padding: 10px;
   border-radius: 5px;
   text-transform: uppercase;
+  /* text-align: center; */
+
 }
 
 .wallet h2 {
@@ -81,6 +83,14 @@ select option:hover {
   /* width: 20rem; */
   width: fit-content;
   padding: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .coin {
