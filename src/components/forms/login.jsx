@@ -4,16 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Login = () => {
-  const [user, setUser] = useState({
-    name: "",
-  });
+  const [user, setUser] = useState("");
 const navigate = useNavigate()
 
   // handle change
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setUser({ name, value });
+    // const { name, value } = event.target.value;
+    setUser(event.target.value);
   };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +30,7 @@ const navigate = useNavigate()
           name="name"
           id="name"
           required
-          value={user.name}
+          value={user}
           placeholder="name"
           onChange={handleChange}
         />
