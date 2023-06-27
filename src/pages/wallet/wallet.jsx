@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import "./wallet.css";
-// import { BsCashCoin } from "react-icons/bs";
-import { GiTwoCoins } from "react-icons/gi";
 import { CurrencyContext } from "../../utils/context";
 import { DepositForm } from "../../components/handleExchange/deposit";
 import { PopUp } from "../../components/popups/popUp";
+import { FundsDeposit } from "../../components/cards";
+import { SiMoneygram } from "react-icons/si";
+
 
 export const Wallet = () => {
   const { baseCurrency } = useContext(CurrencyContext);
@@ -14,7 +15,6 @@ export const Wallet = () => {
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
-    // alert(selected)
   };
 
   return (
@@ -53,7 +53,7 @@ export const Wallet = () => {
 
       <div className="exchangeSection">
         <h2 className="text-center">My wallet</h2>
-        <div className="cards">
+        {/* <div className="cards">
           <div className="walletCards">
             <div className="coin">
               <GiTwoCoins />
@@ -92,7 +92,8 @@ export const Wallet = () => {
               <button>convert</button>
             </div>
           </div>
-        </div>
+        </div> */}
+        <FundsDeposit />
       </div>
     </div>
   );

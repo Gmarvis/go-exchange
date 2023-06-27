@@ -1,22 +1,62 @@
 import React, { useContext, useState } from "react";
 import { CurrencyContext } from "../../utils/context";
+import { getLocalStorage, updateLocalStorage } from "../../service/tools";
 
 export const DepositForm = () => {
   const { baseCurrency } = useContext(CurrencyContext);
-  const [deposit, setDeposit] = useState({
-    amount: 0,
-    currencyType: "",
-  });
+  const [deposit, setDeposit] = useState(
+    {
+      amount: 0,
+      currencyType: "USD",
+    },
+  );
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDeposit((prevDeposit) => ({
+      ...prevDeposit,
+      [name]: value,
+    }));
+  };
 
-  const handleSubmit = () => {};
+  React.useEffect(() => {
+    console.clear();
+    console.log(deposit)
+  }, [deposit])
+
+  console.log(deposit)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const prev = getLocalStorage("amountDeposit") || [
+      {
+        amount: 0,
+        currencyType: "USD",
+      },
+
+      {
+        amount: 0,
+        currencyType: "EUR",
+      },
+
+      {
+        amount: 0,
+        currencyType: "XAF",
+      },
+    ];
+
+    prev.forEach((currency) => {
+      if (currency.currencyType === deposit.currencyType) {
+        currency.amount = +currency.amount + +deposit.amount;
+      }
+    });
+
+    updateLocalStorage("amountDeposit", prev);
+  };
 
   return (
     <div>
       <div className="login">
-        {/* <h1>Enter Name</h1> */}
-
         <form action="submit" onSubmit={handleSubmit}>
           <label>
             Deposit
@@ -24,19 +64,19 @@ export const DepositForm = () => {
               type="number"
               name="amount"
               id="amount"
-              required
+              required={true}
               defaultValue={deposit.amount}
               placeholder="Amount"
               onChange={handleChange}
             />
           </label>
-<br />
+          <br />
           <label>
             into
             <select
-              name="selectedCurrency"
-              // value={selected}
-              // onChange={handleSelect}
+              name="currencyType"
+              defaultValue={deposit.currencyType}
+              onChange={handleChange}
             >
               {baseCurrency.map((currency) => (
                 <option className="optionIterms" value={baseCurrency.code}>
