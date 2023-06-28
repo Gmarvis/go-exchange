@@ -6,12 +6,12 @@ import { PopUp } from "../../components/popups/popUp";
 import { FundsDeposit } from "../../components/cards";
 import { SiMoneygram } from "react-icons/si";
 
-
 export const Wallet = () => {
   const { baseCurrency } = useContext(CurrencyContext);
-  console.log("this is the base currency", baseCurrency);
   const [selected, setSelected] = useState("");
   const [showPopUp, setShowPopUp] = useState(false);
+
+  console.log(baseCurrency)
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
@@ -53,46 +53,7 @@ export const Wallet = () => {
 
       <div className="exchangeSection">
         <h2 className="text-center">My wallet</h2>
-        {/* <div className="cards">
-          <div className="walletCards">
-            <div className="coin">
-              <GiTwoCoins />
-            </div>
-            <div className="funds">
-              <h3>USD</h3>
-              <p>
-                $<span>10000</span>
-              </p>
-              <button>convert</button>
-            </div>
-          </div>
 
-          <div className="walletCards">
-            <div className="coin">
-              <GiTwoCoins />
-            </div>
-            <div className="funds">
-              <h3>EUR</h3>
-              <p>
-                $<span>10000</span>
-              </p>
-              <button>convert</button>
-            </div>
-          </div>
-
-          <div className="walletCards">
-            <div className="coin">
-              <GiTwoCoins />
-            </div>
-            <div className="funds">
-              <h3>XAF</h3>
-              <p>
-                $<span>10000</span>
-              </p>
-              <button>convert</button>
-            </div>
-          </div>
-        </div> */}
         <FundsDeposit />
       </div>
     </div>

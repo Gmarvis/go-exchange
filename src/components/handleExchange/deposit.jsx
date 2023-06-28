@@ -4,12 +4,10 @@ import { getLocalStorage, updateLocalStorage } from "../../service/tools";
 
 export const DepositForm = () => {
   const { baseCurrency } = useContext(CurrencyContext);
-  const [deposit, setDeposit] = useState(
-    {
-      amount: 0,
-      currencyType: "USD",
-    },
-  );
+  const [deposit, setDeposit] = useState({
+    amount: 0,
+    currencyType: "USD",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,13 +16,6 @@ export const DepositForm = () => {
       [name]: value,
     }));
   };
-
-  React.useEffect(() => {
-    console.clear();
-    console.log(deposit)
-  }, [deposit])
-
-  console.log(deposit)
 
   const handleSubmit = (e) => {
     e.preventDefault();

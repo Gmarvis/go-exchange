@@ -25,10 +25,6 @@ option {
   border: none;
 }
 
-select option:hover {
-  background-color: red;
-}
-
 .selectCurrency {
   height: 30px;
   /* width: 6rem; */
@@ -56,8 +52,6 @@ select option:hover {
   padding: 10px;
   border-radius: 5px;
   text-transform: uppercase;
-  /* text-align: center; */
-
 }
 
 .wallet h2 {
@@ -69,18 +63,21 @@ select option:hover {
   color: #04543e;
   font-weight: 500;
 }
+
+.cards h3 {
+  margin: 6px 0;
+}
+
 .balance {
   font-size: 20px;
   font-weight: bold;
   margin: auto 0;
 }
 
-/* walletCards */
 .walletCards {
   display: flex;
   justify-content: space-between;
   border: 1px solid #fff;
-  /* width: 20rem; */
   width: fit-content;
   padding: 10px;
 }
@@ -98,14 +95,10 @@ select option:hover {
 }
 
 .funds {
-  /* background-color: red; */
-  /* width: 10rem; */
   padding: 5px;
 }
 
 .funds button {
-  /* border: 1px solid #04543e; */
-
   display: flex;
   gap: 10px;
   align-content: center;
@@ -117,4 +110,22 @@ select option:hover {
   padding: 4px 8px;
   text-transform: uppercase;
 }
-/*  walletCards */
+
+@media screen and (max-width: 770px) {
+  .wallet {
+    height: 100vh;
+  }
+
+  .walletCards {
+    padding: 2px;
+    width: 100%;
+  }
+
+  .funds button {
+  }
+
+  .coin {
+    /* display: none; */
+    font-size: 80px;
+  }
+}

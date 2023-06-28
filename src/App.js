@@ -26,7 +26,6 @@ function App() {
     });
   }, []);
 
-  console.log(baseCurrency);
 
   return (
     <CurrencyContext.Provider value={{ baseCurrency }}>
