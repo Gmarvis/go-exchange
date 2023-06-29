@@ -12,7 +12,7 @@ export const FundsDeposit = () => {
 
   const [convert, setConvert] = useState({
     amount: 0,
-    currencyType: "",
+    currencyType: "USD",
   });
 
   const handleClick = (funds) => {
@@ -28,10 +28,17 @@ export const FundsDeposit = () => {
     }));
   };
 
+  // handle currency convertion
+
+  // get deposited funds from local statorage
+  const fundsDeposit = getLocalStorage("amountDeposit");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.clear();
     console.log(convert);
+    console.log(fundsDeposit);
+    console.log(baseCurrency);
   };
 
   return (

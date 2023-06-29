@@ -11,8 +11,6 @@ export const Wallet = () => {
   const [selected, setSelected] = useState("");
   const [showPopUp, setShowPopUp] = useState(false);
 
-  console.log(baseCurrency)
-
   const handleSelect = (e) => {
     setSelected(e.target.value);
   };
@@ -28,13 +26,13 @@ export const Wallet = () => {
           <PopUp trigger={showPopUp} setTrigger={setShowPopUp}>
             <DepositForm />
           </PopUp>
-          <h2 className="balance">
-            BALANCE: <span>1000 {selected}</span>{" "}
-          </h2>
+          <div className="balance">
+            <span>10000000 {selected}</span>
+          </div>
 
           <div className="selectCurrency">
             <label htmlFor="currency">
-              select currency
+              {/* select currency */}
               <select
                 name="selectedCurrency"
                 value={selected}
