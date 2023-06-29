@@ -9,7 +9,7 @@
 
 select {
   height: 30px;
-  width: 6rem;
+  width: 25vw;
   color: #fff;
   background-color: #04543e;
   margin: auto 0;
@@ -22,13 +22,13 @@ select {
 }
 
 option {
-  border: none;
+  width: 25px;
+  /* border: none; */
 }
 
 .selectCurrency {
   height: 30px;
-  /* width: 6rem; */
-  /* color: #04543e; */
+
   margin: auto 0;
 }
 
@@ -66,6 +66,20 @@ option {
 
 .cards h3 {
   margin: 6px 0;
+  text-align: end;
+}
+
+.funds {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: left;
+}
+
+.funds button {
+  width: 100px;
+  margin: auto;
+  left: 0;
 }
 
 .balance {
@@ -84,6 +98,7 @@ option {
 
 .cards {
   display: flex;
+  /* width: 100px; */
   flex-direction: row;
   gap: 30px;
   justify-content: center;

@@ -33,12 +33,35 @@ export const FundsDeposit = () => {
   // get deposited funds from local statorage
   const fundsDeposit = getLocalStorage("amountDeposit");
 
+  const convertAmmount = (OjbFrom, ObjTo) => {
+    const rateF = baseCurrency.find(
+      (currObj) => currObj.code === OjbFrom.currencyType
+    ).value;
+
+    const rateTo = baseCurrency.find(
+      (currObj) => currObj.code === ObjTo.currencyType
+    ).value;
+
+    const result = (convert.amount / rateF) * rateTo;
+
+    return result;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.clear();
-    console.log(convert);
-    console.log(fundsDeposit);
-    console.log(baseCurrency);
+
+    const holder = walletFunds.map((curr) => {
+      if (curr.currencyType === popupdata.currencyType) {
+        curr.amount -= convert.amount;
+      }
+
+      if (curr.currencyType === convert.currencyType) {
+        curr.amount = convertAmmount(popupdata, convert);
+      }
+
+      return curr;
+    });
+    updateLocalStorage("amountDeposit", holder);
   };
 
   return (
@@ -53,7 +76,6 @@ export const FundsDeposit = () => {
               <h3>
                 {funds?.amount} {funds?.currencyType}
               </h3>
-
               <button onClick={() => handleClick(funds)}>convert</button>
             </div>
           </div>
@@ -98,7 +120,6 @@ export const FundsDeposit = () => {
                     ))}
                   </select>
                 </label>
-
                 <button>Done</button>
               </form>
             </div>

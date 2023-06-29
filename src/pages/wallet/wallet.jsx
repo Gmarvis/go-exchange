@@ -27,7 +27,7 @@ export const Wallet = () => {
             <DepositForm />
           </PopUp>
           <div className="balance">
-            <span>10000000 {selected}</span>
+            <span>10000 {selected}</span>
           </div>
 
           <div className="selectCurrency">
