@@ -4,12 +4,15 @@ import { CurrencyContext } from "../../utils/context";
 import { DepositForm } from "../../components/handleExchange/deposit";
 import { PopUp } from "../../components/popups/popUp";
 import { FundsDeposit } from "../../components/cards";
-import { SiMoneygram } from "react-icons/si";
+// import { SiMoneygram } from "react-icons/si";
 
 export const Wallet = () => {
   const { baseCurrency } = useContext(CurrencyContext);
   const [selected, setSelected] = useState("");
   const [showPopUp, setShowPopUp] = useState(false);
+  const walletName = localStorage.getItem("user");
+
+  console.log(walletName);
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
@@ -50,7 +53,7 @@ export const Wallet = () => {
       </div>
 
       <div className="exchangeSection">
-        <h2 className="text-center">My wallet</h2>
+        <h2 className="text-center">wallet Name: {walletName}</h2>
 
         <FundsDeposit />
       </div>

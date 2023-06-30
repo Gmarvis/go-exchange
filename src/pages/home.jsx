@@ -11,7 +11,7 @@ import { About } from "../components/about/about";
 
 export const Home = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div>
       <div className="homeContainer">

@@ -65,6 +65,7 @@ export const DepositForm = () => {
           <label>
             into
             <select
+              className="exchangeSelection"
               name="currencyType"
               defaultValue={deposit.currencyType}
               onChange={handleChange}

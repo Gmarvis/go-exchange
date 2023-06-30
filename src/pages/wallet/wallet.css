@@ -9,7 +9,7 @@
 
 select {
   height: 30px;
-  width: 25vw;
+  width: 8vw;
   color: #fff;
   background-color: #04543e;
   margin: auto 0;
@@ -153,5 +153,10 @@ option {
   .coin {
     /* display: none; */
     font-size: 80px;
+  }
+
+  select {
+    height: 30px;
+    width: 100%;
   }
 }

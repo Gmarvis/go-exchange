@@ -1,10 +1,14 @@
 .login {
   color: #020d14;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin: 20px 41px;
-  width: 25rem;
+  /* margin: 20px 41px; */
+  width: 90%;
   height: 90%;
   text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login form {
@@ -15,7 +19,7 @@
 }
 
 .login form input {
-  width: 80%;
+  width: 100%;
   outline: none;
   margin: 0 auto;
   border-bottom: 1px solid #020d14;
@@ -44,6 +48,6 @@
 }
 
 .login form button:hover {
-    background-color: #fff;
-    color: #04543e;
+  background-color: #fff;
+  color: #04543e;
 }
