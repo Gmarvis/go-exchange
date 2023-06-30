@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CurrencyContext } from "../../utils/context";
 import { getLocalStorage, updateLocalStorage } from "../../service/tools";
+import { useNavigate } from "react-router-dom";
 
 export const DepositForm = () => {
   const { baseCurrency } = useContext(CurrencyContext);
@@ -8,6 +9,8 @@ export const DepositForm = () => {
     amount: 0,
     currencyType: "USD",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,6 +46,7 @@ export const DepositForm = () => {
     });
 
     updateLocalStorage("amountDeposit", prev);
+    navigate("/wallet");
   };
 
   return (

@@ -11,7 +11,16 @@ import { About } from "../components/about/about";
 
 export const Home = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  // hande login authentication
+  const handleStart = () => {
+    if (localStorage.getItem("user")) {
+      navigate("/wallet");
+    } else {
+      setShowPopUp(true);
+    }
+  };
   return (
     <div>
       <div className="homeContainer">
@@ -23,7 +32,7 @@ export const Home = () => {
             forward exchange rates.
           </p>
           <div className="headBtn">
-            <button onClick={() => setShowPopUp(true)}>start now</button>
+            <button onClick={handleStart}>start now</button>
             <button>about us</button>
           </div>
           <PopUp trigger={showPopUp} setTrigger={setShowPopUp}>

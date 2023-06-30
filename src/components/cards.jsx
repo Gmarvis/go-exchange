@@ -3,12 +3,14 @@ import { GiTwoCoins } from "react-icons/gi";
 import { getLocalStorage, updateLocalStorage } from "../service/tools";
 import { PopUp } from "./popups/popUp";
 import { CurrencyContext } from "../utils/context";
+import { useNavigate } from "react-router-dom";
 
 export const FundsDeposit = () => {
   const walletFunds = getLocalStorage("amountDeposit");
   const { baseCurrency } = useContext(CurrencyContext);
   const [showPopUp, setShowPopUp] = useState(false);
   const [popupdata, setPopupData] = useState();
+  const navigate = useNavigate();
 
   const [convert, setConvert] = useState({
     amount: 0,
@@ -31,7 +33,6 @@ export const FundsDeposit = () => {
   // handle currency convertion
 
   // get deposited funds from local statorage
-  const fundsDeposit = getLocalStorage("amountDeposit");
 
   const convertAmmount = (OjbFrom, ObjTo) => {
     const rateF = baseCurrency.find(
@@ -62,6 +63,8 @@ export const FundsDeposit = () => {
       return curr;
     });
     updateLocalStorage("amountDeposit", holder);
+    setShowPopUp(false);
+    // navigate("/wallet");
   };
 
   return (
