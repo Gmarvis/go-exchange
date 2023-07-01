@@ -20,11 +20,16 @@ export const Wallet = () => {
   const balance = () => {
     let valTo = baseCurrency?.find((cur) => {
       if (cur.code === selected) {
-        return cur.value;
+        return cur?.value;
       }
     });
 
+    valTo = valTo?.value;
     console.log("this is value to", valTo);
+
+    let valFrom = baseCurrency?.filter((curren) => curren.code !== selected);
+
+    console.log(valFrom);
   };
   balance();
 
