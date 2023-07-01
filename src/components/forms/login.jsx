@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 
-
 export const Login = () => {
   const [user, setUser] = useState("");
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // handle change
   const handleChange = (event) => {
@@ -13,16 +12,15 @@ const navigate = useNavigate()
     setUser(event.target.value);
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     localStorage.setItem("user", user);
-    navigate('/wallet')
+    navigate("/wallet");
   };
 
   return (
     <div className="login">
-        <h1>Enter Name</h1>
+      <h1>Enter Name</h1>
 
       <form action="submit" onSubmit={handleSubmit}>
         <input

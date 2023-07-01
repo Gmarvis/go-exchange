@@ -8,15 +8,25 @@ import { FundsDeposit } from "../../components/cards";
 
 export const Wallet = () => {
   const { baseCurrency } = useContext(CurrencyContext);
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("USD");
   const [showPopUp, setShowPopUp] = useState(false);
   const walletName = localStorage.getItem("user");
-
-  console.log(walletName);
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
   };
+
+  // handle wallet's total balance
+  const balance = () => {
+    let valTo = baseCurrency?.find((cur) => {
+      if (cur.code === selected) {
+        return cur.value;
+      }
+    });
+
+    console.log("this is value to", valTo);
+  };
+  balance();
 
   return (
     <div className="wallet">
@@ -54,7 +64,6 @@ export const Wallet = () => {
 
       <div className="exchangeSection">
         <h2 className="text-center">wallet Name: {walletName}</h2>
-
         <FundsDeposit />
       </div>
     </div>
