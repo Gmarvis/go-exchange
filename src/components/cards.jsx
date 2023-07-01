@@ -3,14 +3,12 @@ import { GiTwoCoins } from "react-icons/gi";
 import { getLocalStorage, updateLocalStorage } from "../service/tools";
 import { PopUp } from "./popups/popUp";
 import { CurrencyContext } from "../utils/context";
-import { useNavigate } from "react-router-dom";
 
 export const FundsDeposit = () => {
   const walletFunds = getLocalStorage("amountDeposit");
   const { baseCurrency } = useContext(CurrencyContext);
   const [showPopUp, setShowPopUp] = useState(false);
   const [popupdata, setPopupData] = useState();
-  const navigate = useNavigate();
 
   const [convert, setConvert] = useState({
     amount: 0,

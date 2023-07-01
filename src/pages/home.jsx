@@ -15,11 +15,7 @@ export const Home = () => {
 
   // hande login authentication
   const handleStart = () => {
-    if (localStorage.getItem("user")) {
-      navigate("/wallet");
-    } else {
-      setShowPopUp(true);
-    }
+    localStorage.getItem("user") ? navigate("/wallet") : setShowPopUp(true);
   };
   return (
     <div>

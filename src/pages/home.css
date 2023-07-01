@@ -1,6 +1,5 @@
 .homeContainer {
   display: flex;
-  /* background-color: red; */
   width: 100%;
   justify-content: space-between;
   height: 90vh;
@@ -49,6 +48,9 @@
 .headBtn button:last-child {
   border: none;
   color: #04543e;
+}
+
+.exchangeSelection {
 }
 
 @media screen and (max-width: 770px) {
