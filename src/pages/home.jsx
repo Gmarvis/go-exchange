@@ -21,25 +21,30 @@ export const Home = () => {
     <div>
       <div className="homeContainer">
         <div className="headerText">
-          <h1>The future of currency exchange is here.</h1>
+          <h1>The Future of Currency Exchange is Here.</h1>
+          <br />
           <p>
             Currency exchange: We offer a wide range of currency pairs,
             including XAF/USD, XAF/EUR, and USD/EUR. We also offer spot and
             forward exchange rates.
           </p>
+          <br />
           <div className="headBtn">
             <button onClick={handleStart}>start now</button>
-            <button>about us</button>
+            <button>
+              {" "}
+              <a href="#about">about us</a>{" "}
+            </button>
           </div>
           <PopUp trigger={showPopUp} setTrigger={setShowPopUp}>
             <Login />
           </PopUp>
         </div>
         <div className="homeImg">
-          <img src={headerpic} alt="" />
+          <img src={landingpic1} alt="" />
         </div>
       </div>
-      <About />
+      <About id="about" />
     </div>
   );
 };

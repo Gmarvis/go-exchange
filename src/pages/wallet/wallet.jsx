@@ -52,10 +52,10 @@ export const Wallet = () => {
 
     // sum currency logic
 
-    let converted = amountsFrom.forEach((amt) => {
-      if (amt.currencyType === valFrom.code) {
-      }
-    });
+    // let converted = amountsFrom.forEach((amt) => {
+    //   if (amt.currencyType === valFrom.code) {
+    //   }
+    // });
 
     console.clear();
     console.log("value to=", valTo);
