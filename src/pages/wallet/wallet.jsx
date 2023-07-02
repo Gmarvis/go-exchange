@@ -4,8 +4,7 @@ import { CurrencyContext } from "../../utils/context";
 import { DepositForm } from "../../components/handleExchange/deposit";
 import { PopUp } from "../../components/popups/popUp";
 import { FundsDeposit } from "../../components/cards";
-import { getLocalStorage, updateLocalStorage } from "../../service/tools";
-// import { SiMoneygram } from "react-icons/si";
+import { getLocalStorage } from "../../service/tools";
 
 export const Wallet = () => {
   const { baseCurrency } = useContext(CurrencyContext);
@@ -25,6 +24,7 @@ export const Wallet = () => {
       if (cur.code === selected) {
         return cur?.value;
       }
+      return cur?.value;
     });
     valTo = valTo?.value;
     console.log("value to", valTo);
@@ -37,6 +37,7 @@ export const Wallet = () => {
       if (fund.currencyType === selected) {
         return fund.amount;
       }
+      return fund.amount;
     });
     amountTo = amountTo?.amount;
 
@@ -50,6 +51,12 @@ export const Wallet = () => {
     console.log("amounts from", amountsFrom);
 
     // sum currency logic
+
+    let converted = amountsFrom.forEach((amt) => {
+      if (amt.currencyType === valFrom.code) {
+      }
+    });
+
     console.clear();
     console.log("value to=", valTo);
     console.log("value from=", valFrom);

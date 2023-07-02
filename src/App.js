@@ -5,6 +5,8 @@ import { Home } from "./pages/home";
 import { Wallet } from "./pages/wallet/wallet";
 import { Route, Routes } from "react-router-dom";
 import { CurrencyContext } from "./utils/context";
+// import { Navbar } from "./components/nav/navbar";
+import Navbar from "./components/nav/navbar";
 
 const baseUrl =
   "https://api.currencyapi.com/v3/latest?apikey=yxwOCSE37Lu64dfvxhbaSrh8SduHenuI2FFeBArJ";
@@ -26,14 +28,16 @@ function App() {
     });
   }, []);
 
-
   return (
-    <CurrencyContext.Provider value={{ baseCurrency }}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="wallet" element={<Wallet />} />
-      </Routes>
-    </CurrencyContext.Provider>
+    <div>
+      <CurrencyContext.Provider value={{ baseCurrency }}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="wallet" element={<Wallet />} />
+        </Routes>
+      </CurrencyContext.Provider>
+    </div>
   );
 }
 
