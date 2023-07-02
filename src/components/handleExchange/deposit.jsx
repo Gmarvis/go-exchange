@@ -3,8 +3,10 @@ import { CurrencyContext } from "../../utils/context";
 import { getLocalStorage, updateLocalStorage } from "../../service/tools";
 import { useNavigate } from "react-router-dom";
 
-export const DepositForm = () => {
+export const DepositForm = (props) => {
   const { baseCurrency } = useContext(CurrencyContext);
+  // const [showPopUp, setShowPopUp] = useState(false);
+
   const [deposit, setDeposit] = useState({
     amount: 0,
     currencyType: "USD",
@@ -46,6 +48,8 @@ export const DepositForm = () => {
     });
 
     updateLocalStorage("amountDeposit", prev);
+    props.setShowPopUp((prev) => !prev);
+    console.log("this is Props", props);
     navigate("/wallet");
   };
 
@@ -82,6 +86,7 @@ export const DepositForm = () => {
             </select>
           </label>
 
+          {/* props.trigger={!trigger} */}
           <button>Done</button>
         </form>
       </div>
